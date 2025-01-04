@@ -1,16 +1,24 @@
 import {act, renderHook} from '@testing-library/react-hooks/dom';
-import {afterEach, beforeEach, describe, expect, it, vi} from 'vitest';
+import {type Mock, afterEach, beforeEach, describe, expect, it, vi} from 'vitest';
 import {useMediaQuery} from '../index.js';
 
 describe('useMediaQuery', () => {
-	const matchMediaMock = vi.fn((query: string) => ({
-		matches: false,
-		media: query,
-		onchange: null,
-		addEventListener: vi.fn(),
-		removeEventListener: vi.fn(),
-		dispatchEvent: vi.fn(),
-	}));
+	const matchMediaMock = vi.fn((query: string) => (
+		query === '(orientation: unsupported)' ?
+			undefined :
+				{
+					matches: false,
+					media: query,
+					onchange: null,
+					addEventListener: vi.fn(),
+					removeEventListener: vi.fn(),
+					dispatchEvent: vi.fn(),
+				}) as unknown as MediaQueryList & {
+					matches: boolean;
+					addEventListener: Mock;
+					removeEventListener: Mock;
+					dispatchEvent: Mock;
+				});
 
 	vi.stubGlobal('matchMedia', matchMediaMock);
 
@@ -28,6 +36,34 @@ describe('useMediaQuery', () => {
 	it('should render', () => {
 		const {result} = renderHook(() => useMediaQuery('max-width : 768px'));
 		expect(result.error).toBeUndefined();
+	});
+
+	it('should return undefined and not thrown on unsupported when not enabled', () => {
+		vi.stubGlobal('console', {
+			error(error: string) {
+				throw new Error(error);
+			},
+		});
+		const {result, rerender, unmount} = renderHook(() => useMediaQuery('max-width : 768px', {enabled: false}));
+		const {result: result2, rerender: rerender2, unmount: unmount2} = renderHook(() => useMediaQuery('(orientation: unsupported)', {enabled: false}));
+		expect(result.error).toBeUndefined();
+		expect(result.current).toBe(undefined);
+		expect(result2.error).toBeUndefined();
+		expect(result2.current).toBe(undefined);
+		rerender('max-width : 768px');
+		rerender2('(orientation: unsupported)');
+		expect(result.error).toBeUndefined();
+		expect(result.current).toBe(undefined);
+		expect(result2.current).toBe(undefined);
+		expect(result2.error).toBeUndefined();
+		unmount();
+		unmount2();
+		expect(result.error).toBeUndefined();
+		expect(result.current).toBe(undefined);
+		expect(result2.error).toBeUndefined();
+		expect(result2.current).toBe(undefined);
+		vi.unstubAllGlobals();
+		vi.stubGlobal('matchMedia', matchMediaMock);
 	});
 
 	it('should return undefined on first render, if initializeWithValue is false', () => {
@@ -146,5 +182,17 @@ describe('useMediaQuery', () => {
 		expect(mql.removeEventListener).not.toHaveBeenCalled();
 		unmount1();
 		expect(mql.removeEventListener).toHaveBeenCalledTimes(1);
+	});
+
+	it('should not throw when media query is not supported', () => {
+		const {result, unmount, rerender} = renderHook(() => useMediaQuery('(orientation: unsupported)', {initializeWithValue: true}));
+		expect(result.error).toBeUndefined();
+		expect(result.current).toBe(undefined);
+		rerender();
+		expect(result.error).toBeUndefined();
+		expect(result.current).toBe(undefined);
+		unmount();
+		expect(result.error).toBeUndefined();
+		expect(result.current).toBe(undefined);
 	});
 });
