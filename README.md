@@ -210,6 +210,13 @@ its former maintainers.
 	<tbody>
 		<tr>
             <td align="center">
+                <a href="https://github.com/rawpixel-vincent">
+                    <img src="https://avatars.githubusercontent.com/u/22284209?v=4" width="100;" alt="rawpixel-vincent"/>
+                    <br />
+                    <sub><b>Vincent</b></sub>
+                </a>
+            </td>
+            <td align="center">
                 <a href="https://github.com/xobotyi">
                     <img src="https://avatars.githubusercontent.com/u/6178739?v=4" width="100;" alt="xobotyi"/>
                     <br />
@@ -238,10 +245,10 @@ its former maintainers.
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/wesgro">
-                    <img src="https://avatars.githubusercontent.com/u/595567?v=4" width="100;" alt="wesgro"/>
+                <a href="https://github.com/AndreasNel">
+                    <img src="https://avatars.githubusercontent.com/u/17763359?v=4" width="100;" alt="AndreasNel"/>
                     <br />
-                    <sub><b>Jake Ketcheson</b></sub>
+                    <sub><b>Andreas Nel</b></sub>
                 </a>
             </td>
             <td align="center">
@@ -252,12 +259,14 @@ its former maintainers.
                 </a>
             </td>
             <td align="center">
-                <a href="https://github.com/AndreasNel">
-                    <img src="https://avatars.githubusercontent.com/u/17763359?v=4" width="100;" alt="AndreasNel"/>
+                <a href="https://github.com/wesgro">
+                    <img src="https://avatars.githubusercontent.com/u/595567?v=4" width="100;" alt="wesgro"/>
                     <br />
-                    <sub><b>Andreas Nel</b></sub>
+                    <sub><b>Jake Ketcheson</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/fengkx">
                     <img src="https://avatars.githubusercontent.com/u/16515468?v=4" width="100;" alt="fengkx"/>
@@ -265,8 +274,6 @@ its former maintainers.
                     <sub><b>Fengkx</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/paul-sachs">
                     <img src="https://avatars.githubusercontent.com/u/11449728?v=4" width="100;" alt="paul-sachs"/>
@@ -316,6 +323,8 @@ its former maintainers.
                     <sub><b>Daniel Friesen</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/ChloeMouret">
                     <img src="https://avatars.githubusercontent.com/u/63965373?v=4" width="100;" alt="ChloeMouret"/>
@@ -323,8 +332,6 @@ its former maintainers.
                     <sub><b>Null</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/punkle">
                     <img src="https://avatars.githubusercontent.com/u/553697?v=4" width="100;" alt="punkle"/>
