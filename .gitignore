@@ -8,7 +8,10 @@ yarn-error.log
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
-
+yarn
+pnpm
+pnpx
+yarnpkg
 /coverage
 /node_modules
 /dist

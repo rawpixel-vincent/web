@@ -1,0 +1,7 @@
+{
+	"editor.tabSize": 2,
+	"prettier.useTabs": true,
+	"prettier.bracketSpacing": false,
+	"prettier.quoteProps": "preserve",
+	"prettier.enable": false
+}
