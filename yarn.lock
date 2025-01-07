@@ -1220,8 +1220,8 @@ __metadata:
     vitest: "npm:^2.1.8"
   peerDependencies:
     js-cookie: ^3.0.5
-    react: ^16.8 || ^17 || ^18
-    react-dom: ^16.8 || ^17 || ^18
+    react: ^16.8 || ^17 || ^18 || ^19
+    react-dom: ^16.8 || ^17 || ^18 || ^19
   peerDependenciesMeta:
     js-cookie:
       optional: true
