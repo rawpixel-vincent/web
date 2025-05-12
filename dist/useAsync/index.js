@@ -13,8 +13,8 @@ export function useAsync(asyncFn, initialValue) {
         error: undefined,
         result: initialValue,
     });
-    const promiseRef = useRef();
-    const argsRef = useRef();
+    const promiseRef = useRef(undefined);
+    const argsRef = useRef(undefined);
     const methods = useSyncedRef({
         execute(...params) {
             argsRef.current = params;

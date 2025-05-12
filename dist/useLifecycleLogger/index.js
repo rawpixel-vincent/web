@@ -9,14 +9,12 @@ export function useLifecycleLogger(componentName, deps) {
     const mountedRef = useRef(false);
     useEffect(() => {
         if (mountedRef.current) {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
             console.log(`${componentName} updated`, deps && [...deps]);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, deps);
     useEffect(() => {
         mountedRef.current = true;
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
         console.log(`${componentName} mounted`, deps && [...deps]);
         return () => {
             mountedRef.current = false;

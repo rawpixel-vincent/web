@@ -1,7 +1,7 @@
 import { type DependencyList } from 'react';
 import { type EffectCallback, type EffectHook } from '../util/misc.js';
 /**
- * Like `useEffect`, but uses `@react-hookz/deep-equal` comparator function to validate deep
+ * Like `useEffect`, but uses `@ver0/deep-equal` comparator function to validate deep
  * dependency changes.
  *
  * @param callback Function that will be passed to the underlying effect hook.

@@ -11,10 +11,10 @@ import { useUnmountEffect } from '../useUnmountEffect/index.js';
  * it's invoked. 0 means no max wait.
  */
 export function useDebouncedCallback(callback, deps, delay, maxWait = 0) {
-    const timeout = useRef();
-    const waitTimeout = useRef();
+    const timeout = useRef(undefined);
+    const waitTimeout = useRef(undefined);
     const cb = useRef(callback);
-    const lastCall = useRef();
+    const lastCall = useRef(undefined);
     const clear = () => {
         if (timeout.current) {
             clearTimeout(timeout.current);
@@ -58,6 +58,6 @@ export function useDebouncedCallback(callback, deps, delay, maxWait = 0) {
             name: { value: `${callback.name || 'anonymous'}__debounced__${delay}` },
         });
         return wrapped;
-        // eslint-disable-next-line react-hooks/exhaustive-deps,@typescript-eslint/no-unsafe-assignment
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [delay, maxWait, ...deps]);
 }

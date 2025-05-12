@@ -8,7 +8,7 @@ import { useMemo, useRef } from 'react';
  * @returns useMemo result
  */
 export const useCustomCompareMemo = (factory, deps, comparator) => {
-    const dependencies = useRef();
+    const dependencies = useRef(undefined);
     if (dependencies.current === undefined || !comparator(dependencies.current, deps)) {
         dependencies.current = deps;
     }

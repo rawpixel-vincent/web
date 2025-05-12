@@ -7,7 +7,7 @@ const proto = Map.prototype;
  * @param entries Initial entries iterator for underlying `Map` constructor.
  */
 export function useMap(entries) {
-    const mapRef = useRef();
+    const mapRef = useRef(undefined);
     const rerender = useRerender();
     if (!mapRef.current) {
         const map = new Map(entries);

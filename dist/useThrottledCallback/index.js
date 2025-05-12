@@ -11,8 +11,8 @@ import { useUnmountEffect } from '../useUnmountEffect/index.js';
  * after the last throttled-function call.
  */
 export function useThrottledCallback(callback, deps, delay, noTrailing = false) {
-    const timeout = useRef();
-    const lastCall = useRef();
+    const timeout = useRef(undefined);
+    const lastCall = useRef(undefined);
     useUnmountEffect(() => {
         if (timeout.current) {
             clearTimeout(timeout.current);
@@ -47,6 +47,6 @@ export function useThrottledCallback(callback, deps, delay, noTrailing = false) 
             name: { value: `${callback.name || 'anonymous'}__throttled__${delay}` },
         });
         return wrapped;
-        // eslint-disable-next-line react-hooks/exhaustive-deps,@typescript-eslint/no-unsafe-assignment
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [delay, noTrailing, ...deps]);
 }

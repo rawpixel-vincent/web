@@ -7,7 +7,7 @@ const proto = Set.prototype;
  * @param values Initial values iterator for underlying `Set` constructor.
  */
 export function useSet(values) {
-    const setRef = useRef();
+    const setRef = useRef(undefined);
     const rerender = useRerender();
     if (!setRef.current) {
         const set = new Set(values);

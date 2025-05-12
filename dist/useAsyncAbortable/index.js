@@ -8,7 +8,7 @@ import { useAsync, } from '../useAsync/index.js';
  * executed.
  */
 export function useAsyncAbortable(asyncFn, initialValue) {
-    const abortController = useRef();
+    const abortController = useRef(undefined);
     const fn = async (...args) => {
         // Abort previous async
         abortController.current?.abort();

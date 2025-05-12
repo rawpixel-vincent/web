@@ -6,7 +6,7 @@ export type UseIntersectionObserverOptions = {
      * considered the viewport. Any part of the target not visible in the visible
      * area of the root is not considered visible.
      */
-    root?: RefObject<Element | Document> | Element | Document | null;
+    root?: RefObject<Element | Document | null> | Element | Document | null;
     /**
      * A string which specifies a set of offsets to add to the root's bounding_box
      * when calculating intersections, effectively shrinking or growing the root
@@ -31,4 +31,4 @@ export type UseIntersectionObserverOptions = {
  * @param options Like `IntersectionObserver` options but `root` can also be
  * react reference
  */
-export declare function useIntersectionObserver<T extends Element>(target: RefObject<T> | T | null, { threshold, root: r, rootMargin, }?: UseIntersectionObserverOptions): IntersectionObserverEntry | undefined;
+export declare function useIntersectionObserver<T extends Element>(target: RefObject<T | null> | T | null, { threshold, root: r, rootMargin, }?: UseIntersectionObserverOptions): IntersectionObserverEntry | undefined;

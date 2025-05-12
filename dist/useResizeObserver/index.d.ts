@@ -7,4 +7,4 @@ export type UseResizeObserverCallback = (entry: ResizeObserverEntry) => void;
  * @param callback Callback that will be invoked on resize.
  * @param enabled Whether resize observer is enabled or not.
  */
-export declare function useResizeObserver<T extends Element>(target: RefObject<T> | T | null, callback: UseResizeObserverCallback, enabled?: boolean): void;
+export declare function useResizeObserver<T extends Element>(target: RefObject<T | null> | T | null, callback: UseResizeObserverCallback, enabled?: boolean): void;

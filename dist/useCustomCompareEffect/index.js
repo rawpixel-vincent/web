@@ -16,7 +16,7 @@ import { basicDepsComparator } from '../util/misc.js';
  */
 // eslint-disable-next-line max-params
 export function useCustomCompareEffect(callback, deps, comparator = basicDepsComparator, effectHook = useEffect, ...effectHookRestArgs) {
-    const dependencies = useRef();
+    const dependencies = useRef(undefined);
     // Effects are not run during SSR, therefore, it makes no sense to invoke the comparator
     if (dependencies.current === undefined ||
         (isBrowser && !comparator(dependencies.current, deps))) {
