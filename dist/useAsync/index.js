@@ -16,17 +16,18 @@ export function useAsync(asyncFn, initialValue) {
     const promiseRef = useRef(undefined);
     const argsRef = useRef(undefined);
     const methods = useSyncedRef({
-        execute(...params) {
+        async execute(...params) {
             argsRef.current = params;
             const promise = asyncFn(...params);
             promiseRef.current = promise;
-            setState(s => ({ ...s, status: 'loading' }));
-            // eslint-disable-next-line promise/catch-or-return
+            setState((s) => ({ ...s, status: 'loading' }));
+            // eslint-disable-next-line promise/catch-or-return, promise/prefer-await-to-then
             promise.then((result) => {
                 // We dont want to handle result/error of non-latest function
                 // this approach helps to avoid race conditions
+                // eslint-disable-next-line promise/always-return
                 if (promise === promiseRef.current) {
-                    setState(s => ({ ...s, status: 'success', error: undefined, result }));
+                    setState((s) => ({ ...s, status: 'success', error: undefined, result }));
                 }
             }, 
             // eslint-disable-next-line @typescript-eslint/use-unknown-in-catch-callback-variable
@@ -34,7 +35,7 @@ export function useAsync(asyncFn, initialValue) {
                 // We don't want to handle result/error of non-latest function
                 // this approach helps to avoid race conditions
                 if (promise === promiseRef.current) {
-                    setState(previousState => ({ ...previousState, status: 'error', error }));
+                    setState((previousState) => ({ ...previousState, status: 'error', error }));
                 }
             });
             return promise;
@@ -55,7 +56,7 @@ export function useAsync(asyncFn, initialValue) {
             reset() {
                 methods.current.reset();
             },
-            execute: (...params) => methods.current.execute(...params),
+            execute: async (...params) => methods.current.execute(...params),
         }), 
         // eslint-disable-next-line react-hooks/exhaustive-deps
         []),

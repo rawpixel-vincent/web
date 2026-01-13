@@ -1,11 +1,13 @@
 function initState(initialState) {
     if (typeof initialState === 'function') {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
         initialState = initialState();
     }
     return initialState;
 }
 function updateState(nextState, previousState) {
     if (typeof nextState === 'function') {
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
         return nextState(previousState);
     }
     return nextState;

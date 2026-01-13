@@ -1,4 +1,4 @@
-import { type DependencyList } from 'react';
+import type { DependencyList } from 'react';
 /**
  * Like `React.useEffect`, but state is only updated within animation frame.
  *

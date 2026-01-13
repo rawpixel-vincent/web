@@ -1,6 +1,6 @@
-import { type DependencyList } from 'react';
-import { type ConditionsList, type ConditionsPredicate } from '../types.js';
-import { type EffectCallback, type EffectHook } from '../util/misc.js';
+import type { DependencyList } from 'react';
+import type { ConditionsList, ConditionsPredicate } from '../types.js';
+import type { EffectCallback, EffectHook } from '../util/misc.js';
 /**
  * Like `useEffect` but its callback is invoked only if all given conditions match a given predicate.
  *

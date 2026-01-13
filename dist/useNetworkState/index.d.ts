@@ -1,4 +1,4 @@
-import { type InitialState } from '../util/resolve-hook-state.js';
+import type { InitialState } from '../util/resolve-hook-state.js';
 export type NetworkInformation = {
     readonly downlink: number;
     readonly downlinkMax: number;

@@ -16,9 +16,11 @@ export function useHookableRef(initialValue, onSet, onGet) {
         let v = initialValue;
         return {
             get current() {
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
                 return onGetRef.current === undefined ? v : onGetRef.current(v);
             },
             set current(value) {
+                // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
                 v = onSetRef.current === undefined ? value : onSetRef.current(value);
             },
         };

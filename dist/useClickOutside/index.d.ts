@@ -1,4 +1,4 @@
-import { type MutableRefObject, type RefObject } from 'react';
+import type { RefObject } from 'react';
 /**
  * Triggers a callback when the user clicks outside a target element.
  *
@@ -7,4 +7,4 @@ import { type MutableRefObject, type RefObject } from 'react';
  * @param events List of events that will be used as triggers for the outside click. Default:
  * 'mousedown', 'touchstart'
  */
-export declare function useClickOutside<T extends HTMLElement>(ref: RefObject<T | null> | MutableRefObject<T | null>, callback: EventListener, events?: string[]): void;
+export declare function useClickOutside<T extends HTMLElement>(ref: RefObject<T | null>, callback: EventListener, events?: string[]): void;

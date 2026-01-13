@@ -54,7 +54,7 @@ export function useList(initialList) {
             }
         },
         sort(compareFn) {
-            actions.set((currentList) => [...currentList].sort(compareFn));
+            actions.set((currentList) => currentList.toSorted(compareFn));
         },
         filter(callbackFn, thisArg) {
             // eslint-disable-next-line unicorn/no-array-callback-reference,unicorn/no-array-method-this-argument

@@ -1,4 +1,4 @@
-import { type DependencyList } from 'react';
+import type { DependencyList } from 'react';
 /**
  * Like `useEffect`, but passed function is throttled.
  *

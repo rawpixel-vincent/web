@@ -14,5 +14,5 @@ export function useScreenOrientation(options) {
         initializeWithValue: options?.initializeWithValue ?? true,
         enabled: options?.enabled,
     });
-    return matches === undefined ? undefined : (matches ? 'portrait' : 'landscape');
+    return matches === undefined ? undefined : matches ? 'portrait' : 'landscape';
 }

@@ -1,4 +1,4 @@
-import { type DependencyList, type RefObject } from 'react';
+import type { DependencyList, RefObject } from 'react';
 export type KeyboardEventPredicate = (event: KeyboardEvent) => boolean;
 export type KeyboardEventFilter = null | string | boolean | KeyboardEventPredicate;
 export type KeyboardEventHandler<T extends EventTarget> = (this: T, event: KeyboardEvent) => void;

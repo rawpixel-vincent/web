@@ -1,4 +1,4 @@
-import { type NextState } from '../util/resolve-hook-state.js';
+import type { NextState } from '../util/resolve-hook-state.js';
 export type UseStorageValueOptions<T, InitializeWithValue extends boolean | undefined> = {
     /**
      * Value to return if `key` is not present in LocalStorage.

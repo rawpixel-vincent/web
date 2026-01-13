@@ -1,4 +1,4 @@
-import { type RefObject } from 'react';
+import type { RefObject } from 'react';
 export type UseIntersectionObserverOptions = {
     /**
      * An Element or Document object (or its react reference) which is an
@@ -31,4 +31,4 @@ export type UseIntersectionObserverOptions = {
  * @param options Like `IntersectionObserver` options but `root` can also be
  * react reference
  */
-export declare function useIntersectionObserver<T extends Element>(target: RefObject<T | null> | T | null, { threshold, root: r, rootMargin, }?: UseIntersectionObserverOptions): IntersectionObserverEntry | undefined;
+export declare function useIntersectionObserver<T extends Element>(target: RefObject<T | null> | T | null, { threshold, root: r, rootMargin }?: UseIntersectionObserverOptions): IntersectionObserverEntry | undefined;

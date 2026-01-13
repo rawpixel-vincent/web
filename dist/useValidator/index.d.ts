@@ -1,5 +1,5 @@
-import { type DependencyList, type Dispatch } from 'react';
-import { type InitialState, type NextState } from '../util/resolve-hook-state.js';
+import type { DependencyList, Dispatch } from 'react';
+import type { InitialState, NextState } from '../util/resolve-hook-state.js';
 export type ValidityState = {
     isValid: boolean | undefined;
 } & Record<any, any>;

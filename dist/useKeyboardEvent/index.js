@@ -8,7 +8,7 @@ const createKeyPredicate = (keyFilter) => {
         return keyFilter;
     }
     if (typeof keyFilter === 'string') {
-        return ev => ev.key === keyFilter;
+        return (ev) => ev.key === keyFilter;
     }
     return keyFilter ? yieldTrue : yieldFalse;
 };

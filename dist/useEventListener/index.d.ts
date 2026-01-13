@@ -1,4 +1,4 @@
-import { type RefObject } from 'react';
+import type { RefObject } from 'react';
 /**
  *  An HTML element or ref object containing an HTML element.
  *

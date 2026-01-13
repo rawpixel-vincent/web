@@ -13,6 +13,7 @@ export function usePermission(descriptor) {
         // eslint-disable-next-line @typescript-eslint/no-floating-promises,promise/catch-or-return
         navigator.permissions
             .query(descriptor)
+            // eslint-disable-next-line promise/prefer-await-to-then,promise/always-return
             .then((status) => {
             const handleChange = () => {
                 setState(status.state);

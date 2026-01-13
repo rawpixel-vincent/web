@@ -80,6 +80,7 @@ export function useStorageValue(storage, key, options) {
     };
     const storageActions = useSyncedRef({
         fetchRaw: () => storage.getItem(key),
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
         fetch: () => parse(storageActions.current.fetchRaw(), optionsRef.current.defaultValue),
         remove() {
             storage.removeItem(key);
@@ -93,9 +94,7 @@ export function useStorageValue(storage, key, options) {
         },
     });
     const isFirstMount = useFirstMountState();
-    const [state, setState] = useState(optionsRef.current?.initializeWithValue && isFirstMount ?
-        storageActions.current.fetch() :
-        undefined);
+    const [state, setState] = useState(optionsRef.current?.initializeWithValue && isFirstMount ? storageActions.current.fetch() : undefined);
     const stateRef = useSyncedRef(state);
     const stateActions = useSyncedRef({
         fetch() {
@@ -126,6 +125,7 @@ export function useStorageValue(storage, key, options) {
             if (!isBrowser) {
                 return;
             }
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
             const s = resolveHookState(value, stateRef.current);
             const storeValue = storageActions.current.store(s);
             if (storeValue !== null) {
@@ -161,6 +161,7 @@ export function useStorageValue(storage, key, options) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     []);
     return useMemo(() => ({
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
         value: state,
         ...staticActions,
     }), 
@@ -170,7 +171,7 @@ export function useStorageValue(storage, key, options) {
 const defaultStringify = (data) => {
     if (data === null) {
         if (process.env.NODE_ENV === 'development') {
-            console.warn('\'null\' is not a valid data for useStorageValue hook, this operation will take no effect');
+            console.warn("'null' is not a valid data for useStorageValue hook, this operation will take no effect");
         }
         return null;
     }

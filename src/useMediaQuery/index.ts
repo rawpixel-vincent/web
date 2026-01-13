@@ -1,4 +1,5 @@
-import {type Dispatch, useEffect, useState} from 'react';
+import type {Dispatch} from 'react';
+import {useEffect, useState} from 'react';
 import {isBrowser} from '../util/const.js';
 
 const queriesMap = new Map<

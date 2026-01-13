@@ -1,5 +1,5 @@
 import { useMemo, useRef } from 'react';
-import { useAsync, } from '../useAsync/index.js';
+import { useAsync } from '../useAsync/index.js';
 /**
  * Like `useAsync`, but also provides `AbortSignal` as the first argument to the async function.
  *
@@ -16,6 +16,7 @@ export function useAsyncAbortable(asyncFn, initialValue) {
         const ac = new AbortController();
         abortController.current = ac;
         // Pass down abort signal and received arguments
+        // eslint-disable-next-line promise/prefer-await-to-then
         return asyncFn(ac.signal, ...args).finally(() => {
             // Unset ref uf the call is last
             if (abortController.current === ac) {

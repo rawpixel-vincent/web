@@ -1,7 +1,9 @@
 export function on(object, ...args) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
     object?.addEventListener?.(...args);
 }
 export function off(object, ...args) {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
     object?.removeEventListener?.(...args);
 }
 export const hasOwnProperty = (object, property) => Object.hasOwn(object, property);

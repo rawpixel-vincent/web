@@ -1,5 +1,5 @@
-import { type SetStateAction } from 'react';
-import { type InitialState } from '../util/resolve-hook-state.js';
+import type { SetStateAction } from 'react';
+import type { InitialState } from '../util/resolve-hook-state.js';
 export type ListActions<T> = {
     /**
      * Replaces the current list.

@@ -1,4 +1,4 @@
-import { type ConditionsPredicate, type Predicate } from '../types.js';
+import type { ConditionsPredicate, Predicate } from '../types.js';
 export declare const noop: () => void;
 export declare const isBrowser: boolean;
 /**

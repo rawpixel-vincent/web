@@ -18,8 +18,7 @@ import { basicDepsComparator } from '../util/misc.js';
 export function useCustomCompareEffect(callback, deps, comparator = basicDepsComparator, effectHook = useEffect, ...effectHookRestArgs) {
     const dependencies = useRef(undefined);
     // Effects are not run during SSR, therefore, it makes no sense to invoke the comparator
-    if (dependencies.current === undefined ||
-        (isBrowser && !comparator(dependencies.current, deps))) {
+    if (dependencies.current === undefined || (isBrowser && !comparator(dependencies.current, deps))) {
         dependencies.current = deps;
     }
     effectHook(callback, dependencies.current, ...effectHookRestArgs);

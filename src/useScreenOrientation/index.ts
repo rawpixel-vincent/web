@@ -17,13 +17,11 @@ type UseScreenOrientationOptions = {
  * this to false will make the hook yield `undefined` on first render.
  * `enabled` (default: `true`) - Enable or disable the hook.
  */
-export function useScreenOrientation(
-	options?: UseScreenOrientationOptions,
-): ScreenOrientation | undefined {
+export function useScreenOrientation(options?: UseScreenOrientationOptions): ScreenOrientation | undefined {
 	const matches = useMediaQuery('(orientation: portrait)', {
 		initializeWithValue: options?.initializeWithValue ?? true,
 		enabled: options?.enabled,
 	});
 
-	return matches === undefined ? undefined : (matches ? 'portrait' : 'landscape');
+	return matches === undefined ? undefined : matches ? 'portrait' : 'landscape';
 }

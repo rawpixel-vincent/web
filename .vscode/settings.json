@@ -1,0 +1,19 @@
+{
+	"prettier.bracketSpacing": false,
+	"prettier.proseWrap": "always",
+	"prettier.quoteProps": "preserve",
+	"prettier.useTabs": true,
+	"prettier.printWidth": 200,
+	"prettier.experimentalTernaries": false,
+	"editor.autoIndent": "none",
+	"editor.detectIndentation": true,
+	"editor.tabSize": 2,
+	"editor.insertSpaces": false,
+	"editor.defaultFormatter": "dbaeumer.vscode-eslint",
+	"eslint.format.enable": true,
+	"prettier.enable": false,
+	"editor.formatOnSave": true,
+	"[typescript]": {
+		"editor.defaultFormatter": "dbaeumer.vscode-eslint"
+	}
+}

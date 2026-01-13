@@ -20,8 +20,8 @@ export function useClickOutside(ref, callback, events = DEFAULT_EVENTS) {
             }
             const { target: evtTarget } = event;
             const cb = cbRef.current;
-            if (!evtTarget ||
-                (Boolean(evtTarget) && !refRef.current.current.contains(evtTarget))) {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
+            if (!evtTarget || (Boolean(evtTarget) && !refRef.current.current.contains(evtTarget))) {
                 cb.call(this, event);
             }
         }

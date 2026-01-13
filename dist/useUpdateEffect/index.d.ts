@@ -1,4 +1,4 @@
-import { type DependencyList, type EffectCallback } from 'react';
+import type { DependencyList, EffectCallback } from 'react';
 /**
  * Effect hook that ignores the first render (not invoked on mount).
  *

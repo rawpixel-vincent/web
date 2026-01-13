@@ -1,5 +1,5 @@
-import { type DependencyList } from 'react';
-import { type DependenciesComparator } from '../types.js';
+import type { DependencyList } from 'react';
+import type { DependenciesComparator } from '../types.js';
 export declare function on<T extends EventTarget>(object: T | null, ...args: Parameters<T['addEventListener']> | [string, EventListenerOrEventListenerObject | CallableFunction, ...any]): void;
 export declare function off<T extends EventTarget>(object: T | null, ...args: Parameters<T['removeEventListener']> | [string, EventListenerOrEventListenerObject | CallableFunction, ...any]): void;
 export declare const hasOwnProperty: <T extends Record<string | number | symbol, any>, K extends string | number | symbol>(object: T, property: K) => object is T & Record<K, unknown>;

@@ -9,5 +9,6 @@ export function useRafState(initialState) {
     const [state, innerSetState] = useState(initialState);
     const [setState, cancelRaf] = useRafCallback(innerSetState);
     useUnmountEffect(cancelRaf);
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
     return [state, setState];
 }

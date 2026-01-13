@@ -1,4 +1,4 @@
-import { type DependencyList } from 'react';
+import type { DependencyList } from 'react';
 /**
  * Like useMemo but validates dependency changes using deep equality check instead of reference check.
  *

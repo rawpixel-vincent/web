@@ -1,4 +1,4 @@
-import { type Predicate } from '../types.js';
+import type { Predicate } from '../types.js';
 /**
  * Returns the most recent _distinct_ value passed to the hook on previous render. Distinct here
  * means that the hook's return value will only update when the passed value updates. This is

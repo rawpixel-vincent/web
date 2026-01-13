@@ -18,7 +18,9 @@ import { truthyAndArrayPredicate } from '../util/const.js';
  */
 // eslint-disable-next-line max-params
 export function useConditionalEffect(callback, deps, conditions, predicate = truthyAndArrayPredicate, effectHook = useEffect, ...effectHookRestArgs) {
-    effectHook((() => {
+    effectHook(
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
+    (() => {
         if (predicate(conditions)) {
             // eslint-disable-next-line @typescript-eslint/no-unsafe-return
             return callback();

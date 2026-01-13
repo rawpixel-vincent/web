@@ -1,4 +1,4 @@
-import { type DependencyList } from 'react';
+import type { DependencyList } from 'react';
 export type DebouncedFunction<Fn extends (...args: any[]) => any> = (this: ThisParameterType<Fn>, ...args: Parameters<Fn>) => void;
 /**
  * Makes passed function debounced, otherwise acts like `useCallback`.

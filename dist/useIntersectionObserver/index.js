@@ -75,7 +75,7 @@ const getObserverEntry = (options) => {
  * @param options Like `IntersectionObserver` options but `root` can also be
  * react reference
  */
-export function useIntersectionObserver(target, { threshold = DEFAULT_THRESHOLD, root: r, rootMargin = DEFAULT_ROOT_MARGIN, } = {}) {
+export function useIntersectionObserver(target, { threshold = DEFAULT_THRESHOLD, root: r, rootMargin = DEFAULT_ROOT_MARGIN } = {}) {
     const [state, setState] = useState();
     useEffect(() => {
         const tgt = target && 'current' in target ? target.current : target;

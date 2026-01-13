@@ -1,4 +1,4 @@
-import { type MutableRefObject } from 'react';
+import type { RefObject } from 'react';
 export type Measures = {
     width: number;
     height: number;
@@ -8,4 +8,4 @@ export type Measures = {
  *
  * @param enabled Whether resize observer is enabled or not.
  */
-export declare function useMeasure<T extends Element>(enabled?: boolean): [Measures | undefined, MutableRefObject<T | null>];
+export declare function useMeasure<T extends Element>(enabled?: boolean): [Measures | undefined, RefObject<T | null>];

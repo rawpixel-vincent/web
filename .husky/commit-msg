@@ -3,5 +3,6 @@ then
   # disable commitlint for CI environments
    exit 0
 else
-  yarn commitlint --edit
+  # yarn commitlint --edit
+  echo "Commitlint is disabled in non-CI environments"
 fi

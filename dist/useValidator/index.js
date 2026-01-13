@@ -7,13 +7,16 @@ import { useSyncedRef } from '../useSyncedRef/index.js';
  * @param deps Dependencies list that passed straight to underlying `useEffect`.
  * @param initialValidity Initial validity state.
  */
-export function useValidator(validator, deps, initialValidity = { isValid: undefined }) {
+export function useValidator(validator, deps, 
+// eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
+initialValidity = { isValid: undefined }) {
     const [validity, setValidity] = useState(initialValidity);
     const validatorRef = useSyncedRef(() => {
         if (validator.length > 0) {
             validator(setValidity);
         }
         else {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-type-assertion
             setValidity(validator());
         }
     });

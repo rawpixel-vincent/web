@@ -1,4 +1,4 @@
-import { type Dispatch, type SetStateAction } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
 /**
  * Like `useState` but its state setter is throttled.
  *

@@ -1,5 +1,5 @@
-import { type DependencyList } from 'react';
-import { type EffectCallback, type EffectHook } from '../util/misc.js';
+import type { DependencyList } from 'react';
+import type { EffectCallback, EffectHook } from '../util/misc.js';
 /**
  * Like `useEffect`, but uses `@ver0/deep-equal` comparator function to validate deep
  * dependency changes.

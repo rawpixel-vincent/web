@@ -1,4 +1,4 @@
-import { type RefObject } from 'react';
+import type { RefObject } from 'react';
 export type UseResizeObserverCallback = (entry: ResizeObserverEntry) => void;
 /**
  * Invokes a callback whenever ResizeObserver detects a change to target's size.

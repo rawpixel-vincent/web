@@ -1,5 +1,5 @@
-import { type SetStateAction } from 'react';
-import { type InitialState } from '../util/resolve-hook-state.js';
+import type { SetStateAction } from 'react';
+import type { InitialState } from '../util/resolve-hook-state.js';
 export type CounterActions = {
     /**
      * Returns the current value of the counter.

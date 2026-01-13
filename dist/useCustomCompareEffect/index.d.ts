@@ -1,6 +1,6 @@
-import { type DependencyList } from 'react';
-import { type DependenciesComparator } from '../types.js';
-import { type EffectCallback, type EffectHook } from '../util/misc.js';
+import type { DependencyList } from 'react';
+import type { DependenciesComparator } from '../types.js';
+import type { EffectCallback, EffectHook } from '../util/misc.js';
 /**
  * Like `useEffect` but uses provided comparator function to validate dependency changes.
  *

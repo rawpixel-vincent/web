@@ -1,4 +1,4 @@
-import { type DependencyList } from 'react';
+import type { DependencyList } from 'react';
 /**
  * This hook provides a console log when the component mounts, updates and unmounts.
  *
